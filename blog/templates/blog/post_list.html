@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!--
    Name:   Phil Hansen
@@ -5,17 +6,16 @@
    Desc:   A page to list the posts made in the blog
    Date:   10 Feb 2019
 -->
-{% load static %}
 <html lang="en">
    <head>
       <title>Phil's Django Girls Blog</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
       <link rel="icon" type="image/gif" href="ph_ico.gif" sizes="16x16" />
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="{% static 'css/blog.css' %}"
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
       <!--[if lt IE 9]>
 	   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
