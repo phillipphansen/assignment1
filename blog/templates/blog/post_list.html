@@ -19,15 +19,12 @@
       <div>
          <h1>Phil's Django Girls Blog</h1>
       </div>
-      <div>
-         <p>published: 10.02.2019, 18:44</p>
-         <h2>First Post</h2>
-         <p>Eu consectetur id nisi irure aliquip labore sunt sit aliqua ex occaecat.</p>
-      </div>
-      <div>
-         <p>published: 10.02.2019, 18:44</p>
-         <h2>Second Post</h2>
-         <p>Eiusmod nostrud et elit aliquip est duis non occaecat sit aute cillum officia.</p>
-      </div>
+      {% for post in posts %}
+         <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+         </div>
+      {% endfor %}
    </body>
 </html>
