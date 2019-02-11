@@ -5,26 +5,39 @@
    Desc:   A page to list the posts made in the blog
    Date:   10 Feb 2019
 -->
+{% load static %}
 <html lang="en">
    <head>
-      <title>Phil Hansen</title>
+      <title>Phil's Django Girls Blog</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
       <link rel="icon" type="image/gif" href="ph_ico.gif" sizes="16x16" />
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}"
       <!--[if lt IE 9]>
 	   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
    </head>
    <body>
-      <div>
-         <h1>Phil's Django Girls Blog</h1>
+      <div class="page-header">
+         <h1><a href="/">Phil's Django Girls Blog</a></h1>
       </div>
-      {% for post in posts %}
-         <div>
-            <p>published: {{ post.published_date }}</p>
-            <h2><a href="">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
+      <div class="content container">
+         <div class="row">
+            <div class="col-md-8">
+               {% for post in posts %}
+                  <div class="post">
+                     <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                     </div>
+                     <h2><a href="">{{ post.title }}</a></h2>
+                     <p>{{ post.text|linebreaksbr }}</p>
+                  </div>
+               {% endfor %}
+            </div>
          </div>
-      {% endfor %}
+      </div>
    </body>
 </html>
